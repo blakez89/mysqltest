@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<style>
+
+	.fader {
+		-moz-transition:opacity 0.7s linear;
+		-o-transition:opacity 0.7s linear;
+		-webkit-transition:opacity 0.7s linear;
+		transition:opacity 0.7s linear;
+	}
+	
+	.fader.fadeOut {
+	opacity: 0;
+	}
+
+.box {
+	border: 1px solid red;
+	text-transform: none;
+	height: 500px;
+	width: 500px;
+	background-color: black;
+}
+
+body {
+	font: 600 48px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;
+	margin: 12px 15px;
+  }
+  .original,
+  .box {
+	border-radius: 6px;
+  }
+  .original {
+	background: #eaeaed;
+	border: 1px dashed #cecfd5;
+	float: left;
+	margin: 12px 15px;
+  }
+  .box {
+	background: #2db34a;
+	height: 95px;
+	line-height: 95px;
+	text-align: center;
+	width: 95px;
+  }
+  .spin {
+	cursor: pointer;
+
+	transform-origin: 0 0;
+	transition:all 1s ease-in;
+
+	
+  }
+  .spin.makespin {
+	transform: rotate(-90deg);
+	
+  }
+
+
+
+
+</style>
+
+<body>
+
+<button>Left</button>	
+<button>Right</button>	
+<div id="alertDiv" class="fader">
+	When you click the button below I'll fade out *or* fade in using the magic of transitions.
+	
+	<div class="box">
+
+	</div>
+
+	
+</div>
+
+<button id="showHideButton">Show or Hide</button>
+
+</div>
+
+
+
+<div class="original">
+
+	  <h1 class="spin">Box 2</figure>
+	
+  </div>
+
+  <button id='doit'>Rotate Box</button>
+
+<script>
+	var el = document.querySelector('.fader');
+
+	el.onclick = function() {
+	  el.classList.toggle('fadeOut');
+	}
+
+	var l = document.querySelector('.spin');
+
+	document.getElementById('doit').onclick = function() {
+	  l.classList.add('makespin');
+	}
+
+
+</script>
+</body>
+</html>
